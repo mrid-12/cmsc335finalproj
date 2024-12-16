@@ -9,12 +9,12 @@
 <body>
     <h1>Leaderboard</h1>
     <ul>
-        <% if (users && users.length > 0) { 
-            users.forEach(user => { %>
-                <li><%= user.username %> - <%= user.score %></li>
-            <% }); 
-        } else { %>
-            No users found.
+        <% if (users && users.length > 0) { %>
+            <% users.forEach(user => { %>
+                <%= user.username %> - <%= user.score %><br>
+            <% }); %>
+        <% } else { %>
+            <li>No users found.</li>
         <% } %>
     </ul>
     <a href="/">Back to Home</a>

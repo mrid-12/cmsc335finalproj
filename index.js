@@ -5,6 +5,7 @@ require("dotenv").config({ path: path.resolve(__dirname, 'credentialsDontPost/.e
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = process.env.MONGO_CONNECTION_STRING;
 const databaseAndCollection = {db: "CMSC335DB", collection:"players"};
+
 const PORT = 5000;
 const app = express();
 
@@ -18,7 +19,7 @@ const userRouter = require('./router/router');
 app.use('/user', userRouter);
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', { joke: 'The closer you are to your random number, you might find a different category joke'});
 });
 
 async function main() {
